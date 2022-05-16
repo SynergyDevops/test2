@@ -9,6 +9,7 @@ terraform {
 provider "github" {
   organization = "SynergyDevops"
   #version = "~> 4.0"
+  owner = "my-org"
 }
 
 resource "github_branch_protection_v3" "main_protection" {
