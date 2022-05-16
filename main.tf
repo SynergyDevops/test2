@@ -8,11 +8,11 @@ terraform {
 }
 provider "github" {
   organization = "SynergyDevops"
+  owner = "SynergyDevops"
   #version = "~> 4.0"
 }
 
 resource "github_branch_protection_v3" "main_protection" {
-  organization = "SynergyDevops"
   count = length(var.repository)
   repository =  var.repository[count.index]
   #repository = "${var.repository}"
