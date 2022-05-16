@@ -12,6 +12,7 @@ provider "github" {
 }
 
 resource "github_branch_protection_v3" "main_protection" {
+  organization = "SynergyDevops"
   count = length(var.repository)
   repository =  var.repository[count.index]
   #repository = "${var.repository}"
