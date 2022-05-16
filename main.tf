@@ -13,7 +13,7 @@ provider "github" {
 }
 
 resource "github_branch_protection_v3" "example" {
-  repository     = github_repository.example.name
+  repository     = github_repository.example.test3
   branch         = "main"
   enforce_admins = true
   require_signed_commits = true
