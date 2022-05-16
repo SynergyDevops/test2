@@ -32,5 +32,5 @@ resource "github_branch_protection_v3" "example" {
   }
 
 resource "github_repository" "example" {
-  name = "test3"
+  name = "test3"}
 }
