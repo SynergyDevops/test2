@@ -12,8 +12,7 @@ provider "github" {
   #version = "~> 4.0"
 }
 resource "github_branch_protection_v3" "main_protection" {
-  count = length(var.repository)
-  repository =  var.repository[count.index]
+  for_each   = var.repository
   #repository = "${var.repository}"
   branch = "main"
   enforce_admins = true
