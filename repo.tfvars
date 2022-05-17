@@ -1,5 +1,1 @@
- repository = "repository" {
- description = "Synergy Repositories"
-  type        = list(string)
-    default     = ["test1", "test2", "test3"]
-}
+ repository = "repository" {test1, test2, test3}
