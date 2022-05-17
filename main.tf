@@ -12,7 +12,7 @@ provider "github" {
   #version = "~> 4.0"
 }
 resource "github_branch_protection_v3" "main_protection" {
-  for_each = local.repository
+  for_each = toset( ["test1", "test2", "test3"] )
   #repository = "${var.repository}"
   branch = "main"
   enforce_admins = true
