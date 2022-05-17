@@ -1,5 +1,6 @@
 variable "repository" {
   description = "Synergy Repositories"
-  type        = list(string)
-  default     = ["test1", "test2", "test3"]
+  type        = map(object({
+    default     = ["test1", "test2", "test3"]
+  }))
 }
