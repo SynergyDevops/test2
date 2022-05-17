@@ -11,10 +11,6 @@ provider "github" {
   owner = "SynergyDevops"
   #version = "~> 4.0"
 }
-resource "github_organization_project" "project" {
-  name = "SynergyDevops"
-  body = "This is a organization project."
-}
 resource "github_branch_protection_v3" "main_protection" {
   count = length(var.repository)
   repository =  var.repository[count.index]
