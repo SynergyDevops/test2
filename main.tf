@@ -13,7 +13,7 @@ provider "github" {
 }
 resource "github_branch_protection_v3" "main_protection" {
   for_each   = var.repository
-  #repository = "${var.repository}"
+  repository = "${var.repository}"
   branch = "main"
   enforce_admins = true
   require_signed_commits = true
