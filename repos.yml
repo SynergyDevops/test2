@@ -1,25 +1,5 @@
-resources:
-  repositories:
-  - repository: test1 # The name used to reference this repository in the checkout step
-    type: github
-    endpoint: MyGitHubServiceConnection
-    name: SynergyDevops/test1
-  - repository: test2 # The name used to reference this repository in the checkout step
-    type: github
-    endpoint: MyGitHubServiceConnection
-    name: SynergyDevops/test2
-  - repository: test3 # The name used to reference this repository in the checkout step
-    endpoint: MyGitHubServiceConnection
-    type: github
-    name: SynergyDevops/test3
-
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- checkout: test1
-- checkout: test2
-- checkout: test3
+queue : 
+ - test1
+ - test2
+ - test3
+ - Settings
