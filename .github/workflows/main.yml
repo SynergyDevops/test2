@@ -4,27 +4,22 @@ on:
   pull_request:
     branches: [main]
     
+  push:
+    branches: [main]
+    
   workflow_dispatch:
 
 jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3.1.0
-        with:
-          fetch-depth: 0
+    container:
+      image: hashicorp/terraform
     
     #env:
       #GITHUB_TOKEN: ${{ secrets.SYNERGY_DEVOPS_ACCESS_GITHUB_TOKEN }}
       
-  terraform_implementation:
-    name: terraform
-    runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform
-  
+    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3.1.0
