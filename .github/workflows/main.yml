@@ -1,0 +1,29 @@
+name: Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+    
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    name: Terraform
+    runs-on: ubuntu-latest
+    container:
+      image: hashicorp/terraform
+    
+    #env:
+      #GITHUB_TOKEN: ${{ secrets.SYNERGY_DEVOPS_ACCESS_GITHUB_TOKEN }}
+      
+    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3.1.0
+        
+      - name: Terraform Init
+        run: terraform init
+        
+      - name: Terraform Plan
+        run: terraform plan
+    
